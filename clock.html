@@ -18,9 +18,30 @@
         var hour = date.getHours();
         var minutes = date.getMinutes();
         var seconds = date.getSeconds();
+
+        var session = "AM";
+        if(hour==0){
+            hour = 12;  //12 hour format
+        }
+        if(hour>13){
+            hour = hour-12;
+            session="PM";
+        }
+
+        // if(hour<10){
+        //     hour = "0"+hour
+        // }
+        // if(minutes<10){
+        //     minutes="0"+minutes
+        // }if(seconds<10){
+        //     seconds="0"+seconds
+        // }
+        hour = (hour < 10) ? "0" + hour : hour;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
         
     var mydiv = document.getElementById('digital-clock')
-    mydiv.innerHTML = `${hour}:${minutes}:${seconds}`;
+    mydiv.innerHTML = `${hour}:${minutes}:${seconds} ${session}`;
 
     setTimeout(showTime, 1000);
         }   
