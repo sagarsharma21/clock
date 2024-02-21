@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div id="digital-clock">
+
+    </div>
+    <script type="text/javascript">
+
+    function showTime(){
+
+        var date = new Date();
+        
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        
+    var mydiv = document.getElementById('digital-clock')
+    mydiv.innerHTML = `${hour}:${minutes}:${seconds}`;
+
+    setTimeout(showTime, 1000);
+        }   
+        showTime();
+        
+    </script>
+</body>
+</html>
